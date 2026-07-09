@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login - Food Delivery App</title>
+</head>
+<body>
+    <div class="container">
+    <h2>Login</h2>
+
+    <!-- action="login" matches the @WebServlet("/login") mapping -->
+    <form action="login" method="post">
+
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <!-- name="name" matches request.getParameter("name") in your servlet -->
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p style="margin-top: 16px;">New here? <a href="signup.html">Create an account</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sign Up - Food Delivery App</title>
+</head>
+<body>
+    <div class="container">
+    <h2>Create an Account</h2>
+
+    <!--
+        action="signup" -> this matches the @WebServlet("/signup") mapping
+        method="post"    -> form data will NOT be visible in the URL (safer
+                            than GET for passwords)
+    -->
+    <form action="signup" method="post">
+
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <label>Phone:</label>
+        <input type="text" name="phone">
+
+        <!--
+            The "name" attribute of each input is what the servlet reads using
+            request.getParameter("name"), request.getParameter("email"), etc.
+            These names must match EXACTLY (case-sensitive).
+        -->
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p style="margin-top: 16px;">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+</body>
+</html>

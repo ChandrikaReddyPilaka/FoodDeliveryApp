@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.foodapp</groupId>
+    <artifactId>FoodDeliveryApp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!-- packaging must be "war" for a Dynamic Web Project (produces a
+         deployable .war file that Tomcat understands) -->
+    <packaging>war</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+
+        <!-- Jakarta Servlet API - needed for @WebServlet, HttpServlet, etc.
+             "provided" scope means: Tomcat already includes this itself,
+             so Maven should NOT bundle it into the final .war file
+             (bundling it too would cause conflicts). -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JSP API - needed for JSP pages (request/response objects
+             used inside .jsp scriptlets) -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp</groupId>
+            <artifactId>jakarta.servlet.jsp-api</artifactId>
+            <version>3.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- MySQL JDBC Driver - THIS is the one that was likely missing,
+             causing DBConnection.getConnection() to fail when run through
+             Tomcat. Default scope (no "provided") means it WILL be
+             bundled into the .war, since Tomcat has no idea how to
+             talk to MySQL on its own. -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>FoodDeliveryApp</finalName>
+    </build>
+
+</project>
