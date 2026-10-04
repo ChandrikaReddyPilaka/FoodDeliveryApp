@@ -85,43 +85,7 @@ After placing an order, users receive an order confirmation page.
 
 Users can view their previously placed orders.
 
-
- Project Structure
-
-FoodDeliveryApp/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── foodapp/
-│   │   │           ├── dao/
-│   │   │           ├── model/
-│   │   │           ├── servlet/
-│   │   │           └── util/
-│   │   │
-│   │   └── webapp/
-│   │       ├── css/
-│   │       ├── images/
-│   │       ├── cart.jsp
-│   │       ├── home.jsp
-│   │       ├── login.html
-│   │       ├── login.jsp
-│   │       ├── menu.jsp
-│   │       ├── myorders.jsp
-│   │       ├── orderconfirmation.jsp
-│   │       ├── restaurant.jsp
-│   │       ├── signup.html
-│   │       └── signup.jsp
-│   │
-├── pom.xml
-└── README.md
-
-«The exact package and folder names may vary depending on the project structure.»
-
-
-
- Database
+Database
 
 The application uses MySQL as its database.
 
